@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(94, 94, 94);
+    color: whitesmoke;
+}
+
+.blok {
+    margin: 12%;
+    width: 90%;
+    max-width: 700px;
+}
+
+.blok h1 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.blok h1 span {
+    padding-bottom: 7px;
+    color: rgb(255, 62, 62);
+    border-bottom: 4px solid rgb(255, 62, 62);
+}
+
+.widok {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    padding: 25px 20px;
+    color: black;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+
+.widok i {
+    width: 30px;
+    font-size: 35px;    cursor: pointer;
+}
+
+.widok input {
+    background-color: whitesmoke;
+    border: 0;
+    outline: 0;
+    font-size: 24px;
+}
