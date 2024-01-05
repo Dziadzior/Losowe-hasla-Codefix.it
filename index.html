@@ -17,14 +17,41 @@
 <div class="blok">
     <h1>Generator <br><span>Losowych *****</span></h1>
     <div class="widok">
-        <input type="text" id="password" placeholder="Password">
-        <i class="fa-regular fa-copy" style="color: #ff0f0f;"></i>
+        <input type="text" class="pass" id="haslo" placeholder="Haslo">
+        <i class="fa-regular fa-copy"></i>
     </div>
-    <button><i class="fa-solid fa-pen"></i>Generuj hasło</button>
+    <button onclick="stworzHaslo()"><i class="fa-solid fa-pen"></i>Generuj hasło</button>
 </div>
 
+<script type="text/javascript">
 
+function stworzHaslo() {
+    const wartosci = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz?/><|/}{+=_-)(][*&^%$#@!~:"
 
+    let hasloDlugosc = 10;
+    let haslo = '';
+
+    for (let i = 0; i < hasloDlugosc; i++) {
+        let losowaWartosc = Math.floor(Math.random() * wartosci.length);
+        
+        haslo += wartosci.substring(losowaWartosc, losowaWartosc + 1);
+        
+        document.getElementById('haslo').value = haslo;
+    }
+}
+
+let kopiujHaslo = document.querySelector('.widok');
+kopiujHaslo.querySelector('i').addEventListener('click', function() {
+    let pole = kopiujHaslo.querySelector('input.pass');
+    pole.select();
+    document.execCommand("copy");
+    kopiujHaslo.classList.add('aktywny');
+    window.getSelection().removeAllRanges();
+    setTimeout(function() {
+        kopiujHaslo.classList.remove('aktywny');
+    }, 1500);
+    });
+</script>
 
 <!-- JS -->
 <script src="skrypt.js"></script>
